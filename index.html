@@ -2430,6 +2430,10 @@
         font-size: 0.58rem;
         letter-spacing: 0.5px;
       }
+
+      .hidden {
+        display: none;
+      }
     }
   </style>
 </head>
@@ -2535,7 +2539,11 @@
       <div class="hero-right">
         <div class="hero-card">
           <div class="hero-card-title">Get Your Free Estimate</div>
-          <form class="hero-form" name="estimate-hero" method="POST" data-netlify="true" onsubmit="handleForm(event)">
+          <form class="hero-form" name="estimate-hero" method="POST" data-netlify="true" netlify-honeypot="bot-field"
+            onsubmit="handleForm(event)">
+            <p class="hidden">
+              <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+            </p>
             <input type="hidden" name="form-name" value="estimate-hero">
             <input type="text" name="full-name" placeholder="Your Full Name" required>
             <input type="tel" name="phone" placeholder="Phone Number" required>
@@ -3187,7 +3195,10 @@
         <div class="contact-form-wrap fade-in">
           <h3>Request Your Free Estimate</h3>
           <form class="contact-form" name="estimate-contact" method="POST" data-netlify="true"
-            onsubmit="handleForm(event)">
+            netlify-honeypot="bot-field" onsubmit="handleForm(event)">
+            <p class="hidden">
+              <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+            </p>
             <input type="hidden" name="form-name" value="estimate-contact">
             <div class="form-row"><input type="text" name="first-name" placeholder="First Name" required><input
                 type="text" name="last-name" placeholder="Last Name" required></div>
