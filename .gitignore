@@ -1,0 +1,18 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build/Dev tools
+node_modules/
+.env
+.agent/
+.gemini/
+dist/
+build/
+.next/
+.venv/
+__pycache__/
+
+# Scratch files
+/tmp/
+*.log
