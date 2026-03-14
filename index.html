@@ -12,8 +12,120 @@
     href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
     rel="stylesheet">
   <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"LocalBusiness","name":"Gary's Concrete and Construction Company","telephone":"1-877-615-3528","url":"https://www.garyconcrete.com","priceRange":"$$","description":"Premium concrete and construction services including driveways, foundations, patios, sidewalks, and commercial concrete work.","areaServed":[{"@type":"State","name":"Tennessee"},{"@type":"State","name":"Mississippi"}]}
-</script>
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://www.garyconcrete.com/#organization",
+        "name": "Gary's Concrete and Construction Company",
+        "url": "https://www.garyconcrete.com",
+        "logo": "https://www.garyconcrete.com/Assets/logo.png",
+        "image": "https://www.garyconcrete.com/Assets/hero-bg.jpg",
+        "description": "Premium concrete and construction services in Memphis and Mississippi regions. Specialists in driveways, foundations, and commercial concrete.",
+        "telephone": "1-877-615-3528",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Memphis",
+          "addressRegion": "TN",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 35.1495,
+          "longitude": -90.0490
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "08:00",
+            "closes": "17:00"
+          }
+        ],
+        "areaServed": [
+          { "@type": "City", "name": "Memphis" },
+          { "@type": "State", "name": "Tennessee" },
+          { "@type": "State", "name": "Mississippi" }
+        ],
+        "sameAs": [
+          "https://www.facebook.com/garysconcrete",
+          "https://www.instagram.com/garysconcrete"
+        ]
+      },
+      {
+        "@type": "Service",
+        "name": "Concrete Driveway Construction",
+        "serviceType": "Concrete Construction",
+        "provider": { "@id": "https://www.garyconcrete.com/#organization" },
+        "areaServed": { "@type": "State", "name": "Tennessee" }
+      },
+      {
+        "@type": "Service",
+        "name": "Concrete Foundation Repair & Installation",
+        "serviceType": "Concrete Construction",
+        "provider": { "@id": "https://www.garyconcrete.com/#organization" },
+        "areaServed": { "@type": "State", "name": "Mississippi" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the average cost of a concrete driveway in Memphis?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The average cost of a concrete driveway in Memphis typically ranges from $6 to $12 per square foot, depending on the complexity and local material costs."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does it take for a concrete driveway to cure for cars?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "For standard residential driveways, you can typically drive a passenger vehicle on new concrete after 7 days, though it takes 28 days to reach full structural strength."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- AI Quick Facts (AEO) -->
+  <div id="quick-facts" style="display:none;" aria-hidden="true">
+    <h2>Gary's Concrete Quick Facts</h2>
+    <ul>
+      <li>Service Areas: Memphis TN, Germantown, Collierville, Bartlett, Southaven MS, Olive Branch.</li>
+      <li>Main Services: Driveways, Foundations, Patios, Commercial Concrete.</li>
+      <li>Experience: 30+ years in concrete construction.</li>
+      <li>Pricing: Competitive local rates, free on-site estimates.</li>
+      <li>Availability: Monday-Sunday 6AM-7PM.</li>
+      <li>Contact: 1-877-615-3528</li>
+    </ul>
+  </div>
+
+  <!-- Geo Tags -->
+  <meta name="geo.region" content="US-TN" />
+  <meta name="geo.placename" content="Memphis" />
+  <meta name="geo.position" content="35.1495;-90.0490" />
+  <meta name="ICBM" content="35.1495, -90.0490" />
+
+  <!-- Social Media (Open Graph) -->
+  <meta property="og:title" content="Gary's Concrete and Construction Company | Premium Concrete Services" />
+  <meta property="og:description" content="Expert concrete driveways, foundations, and commercial work in Memphis, TN and surrounding MS areas. Call 1-877-615-3528 today!" />
+  <meta property="og:image" content="https://www.garyconcrete.com/Assets/og-image.jpg" />
+  <meta property="og:url" content="https://www.garyconcrete.com" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Gary's Concrete and Construction Company" />
+  <meta name="twitter:description" content="Expert concrete services in Memphis and Mississippi." />
+  <meta name="twitter:image" content="https://www.garyconcrete.com/Assets/og-image.jpg" />
+
+  <link rel="canonical" href="https://www.garyconcrete.com/" />
   <style>
     .hidden {
       display: none;
@@ -3085,70 +3197,64 @@
         <h2 class="heading-lg">Frequently Asked Questions</h2>
       </div>
       <div class="faq-grid fade-in">
-        <div class="faq-item"><button class="faq-question">How much does a concrete driveway cost? <svg class="faq-icon"
+        <div class="faq-item"><button class="faq-question">What is the average cost of a concrete driveway? <svg class="faq-icon"
               viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
               stroke-linejoin="round">
               <line x1="12" y1="5" x2="12" y2="19" />
               <line x1="5" y1="12" x2="19" y2="12" />
             </svg></button>
           <div class="faq-answer">
-            <p>A standard broom-finish driveway typically runs $6–$12 per square foot, depending on size and site
-              conditions. We provide free, detailed estimates with no hidden fees.</p>
+            <p>A standard broom-finish concrete driveway typically costs between $6 and $12 per square foot in the Memphis and Mississippi area. Site preparation, thickness, and reinforcement needs will determine the final price. We offer free, exact on-site quotes.</p>
           </div>
         </div>
-        <div class="faq-item"><button class="faq-question">How long does a concrete project take? <svg class="faq-icon"
+        <div class="faq-item"><button class="faq-question">How long does it take to complete a concrete project? <svg class="faq-icon"
               viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
               stroke-linejoin="round">
               <line x1="12" y1="5" x2="12" y2="19" />
               <line x1="5" y1="12" x2="19" y2="12" />
             </svg></button>
           <div class="faq-answer">
-            <p>Most residential projects take 2–5 days. Concrete needs about 7 days to cure before normal use and 28
-              days for full strength.</p>
+            <p>Most residential concrete projects, like driveways or patios, are completed in 2 to 5 days. While it's safe for foot traffic within 24–48 hours, we recommend waiting 7 days before driving heavy vehicles on it.</p>
           </div>
         </div>
-        <div class="faq-item"><button class="faq-question">Do you offer free estimates? <svg class="faq-icon"
+        <div class="faq-item"><button class="faq-question">Are on-site estimates free for concrete work? <svg class="faq-icon"
               viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
               stroke-linejoin="round">
               <line x1="12" y1="5" x2="12" y2="19" />
               <line x1="5" y1="12" x2="19" y2="12" />
             </svg></button>
           <div class="faq-answer">
-            <p>Absolutely! Every project starts with a free on-site consultation and detailed written estimate. No
-              pressure, no obligation.</p>
+            <p>Yes, Gary's Concrete provides 100% free, no-obligation on-site consultations and written estimates. We visit your property to assess soil conditions and measurements to give you an accurate price.</p>
           </div>
         </div>
-        <div class="faq-item"><button class="faq-question">Are you licensed and insured? <svg class="faq-icon"
+        <div class="faq-item"><button class="faq-question">Is Gary's Concrete licensed and insured? <svg class="faq-icon"
               viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
               stroke-linejoin="round">
               <line x1="12" y1="5" x2="12" y2="19" />
               <line x1="5" y1="12" x2="19" y2="12" />
             </svg></button>
           <div class="faq-answer">
-            <p>Yes. We carry comprehensive liability insurance and workers' compensation. Happy to provide proof upon
-              request.</p>
+            <p>Yes, we are a fully licensed and insured concrete contractor. We carry comprehensive liability and workers' compensation insurance to protect both our crew and your property during every project.</p>
           </div>
         </div>
-        <div class="faq-item"><button class="faq-question">What concrete finishes do you offer? <svg class="faq-icon"
+        <div class="faq-item"><button class="faq-question">What decorative concrete finishes can I choose? <svg class="faq-icon"
               viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
               stroke-linejoin="round">
               <line x1="12" y1="5" x2="12" y2="19" />
               <line x1="5" y1="12" x2="19" y2="12" />
             </svg></button>
           <div class="faq-answer">
-            <p>Broom finish, exposed aggregate, stamped patterns (stone, brick, slate, wood plank), colored concrete,
-              polished, and salt finish.</p>
+            <p>We offer a wide variety of finishes including standard broom finish, exposed aggregate, stamped concrete (slate, brick, or stone patterns), colored concrete, and salt finishes for extra texture.</p>
           </div>
         </div>
-        <div class="faq-item"><button class="faq-question">Do you handle permits? <svg class="faq-icon"
+        <div class="faq-item"><button class="faq-question">Do you assist with construction permits? <svg class="faq-icon"
               viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
               stroke-linejoin="round">
               <line x1="12" y1="5" x2="12" y2="19" />
               <line x1="5" y1="12" x2="19" y2="12" />
             </svg></button>
           <div class="faq-answer">
-            <p>Yes, we handle all necessary permits and coordinate with local inspectors so you don't have to worry
-              about it.</p>
+            <p>Yes, we coordinate all necessary permits and inspections required by local city or county codes in Tennessee and Mississippi, ensuring your project is fully compliant.</p>
           </div>
         </div>
       </div>
