@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You | Gary's Concrete and Construction Company</title>
+  <meta name="description" content="Thank you for submitting your project information to Gary's Concrete.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+    rel="stylesheet">
+  <style>
+    /* REUSING STYLES FROM INDEX.HTML */
+    :root {
+      --slate-950: #0C1222;
+      --slate-900: #111827;
+      --slate-800: #1E293B;
+      --slate-700: #334155;
+      --slate-600: #475569;
+      --slate-500: #64748B;
+      --slate-400: #94A3B8;
+      --slate-300: #CBD5E1;
+      --slate-200: #E2E8F0;
+      --slate-100: #F1F5F9;
+      --slate-50: #F8FAFC;
+      --blue-700: #1D4ED8;
+      --blue-600: #2563EB;
+      --blue-500: #3B82F6;
+      --blue-400: #60A5FA;
+      --blue-300: #93C5FD;
+      --amber-500: #F59E0B;
+      --green-500: #22C55E;
+      --green-400: #4ADE80;
+      --white: #FFFFFF;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+      --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
+      --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.18);
+      --radius: 6px;
+      --radius-lg: 12px;
+      --radius-xl: 16px;
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--slate-800);
+      background: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased
+    }
+
+    .container, .container-wide {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px
+    }
+
+    .heading-lg {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 1;
+      letter-spacing: 1.5px;
+      text-transform: uppercase
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 32px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      border-radius: var(--radius);
+      transition: all var(--transition);
+      position: relative;
+      overflow: hidden;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--blue-600);
+      color: var(--white)
+    }
+
+    .btn-primary:hover {
+      background: var(--blue-700);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(37, 99, 235, 0.35)
+    }
+
+    /* Nav */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: var(--slate-900);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      transition: all var(--transition)
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      max-width: 1400px;
+      margin: 0 auto;
+      height: 76px
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-shrink: 0;
+      text-decoration: none;
+    }
+
+    .nav-logo-icon {
+      width: 46px;
+      height: 46px;
+      background: var(--blue-600);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem;
+      color: white;
+      letter-spacing: 1px
+    }
+
+    .nav-logo-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.25rem;
+      color: white;
+      letter-spacing: 2px;
+      line-height: 1;
+      display: block;
+    }
+
+    .nav-logo-tag {
+      font-size: 0.62rem;
+      color: var(--slate-400);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 500;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px
+    }
+
+    .nav-links a {
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding: 8px 14px;
+      border-radius: var(--radius);
+      transition: all var(--transition);
+      text-decoration: none;
+    }
+
+    .nav-links a:hover {
+      color: white;
+      background: rgba(255, 255, 255, 0.08)
+    }
+
+    .nav-btn {
+      padding: 10px 22px;
+      background: var(--blue-600);
+      color: white;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-radius: var(--radius);
+      transition: all var(--transition);
+      text-decoration: none;
+    }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      padding: 8px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .nav-toggle span {
+      width: 24px;
+      height: 2px;
+      background: white;
+      border-radius: 2px;
+      transition: all var(--transition)
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 76px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--slate-900);
+      z-index: 998;
+      padding: 32px 24px;
+      overflow-y: auto
+    }
+
+    .mobile-menu.active {
+      display: block
+    }
+
+    .mobile-menu a {
+      display: block;
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 600;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    @media(max-width:1024px) {
+      .nav-links, .nav-cta { display: none }
+      .nav-toggle { display: flex }
+    }
+
+    /* Thank You Content */
+    .thank-you-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 0 80px;
+      background: linear-gradient(135deg, #cbd5e1 0%, #94a3b8 100%);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .thank-you-section::after {
+      content: '';
+      position: absolute;
+      top: 5%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .thank-you-deco {
+      position: absolute;
+      top: 20%;
+      left: 5%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .thank-you-card {
+      max-width: 600px;
+      width: 100%;
+      background: var(--white);
+      border-radius: var(--radius-xl);
+      padding: 60px 40px;
+      border: 1px solid var(--slate-200);
+      box-shadow: var(--shadow-xl);
+      position: relative;
+      z-index: 1;
+    }
+
+    .success-icon {
+      width: 80px;
+      height: 80px;
+      background: var(--green-400);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 32px;
+      box-shadow: 0 10px 20px rgba(74, 222, 128, 0.3);
+    }
+
+    .thank-you-card h1 {
+      margin-bottom: 16px;
+      color: var(--slate-900);
+    }
+
+    .thank-you-card p {
+      color: var(--slate-600);
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--slate-900);
+      color: rgba(255, 255, 255, 0.6);
+      padding: 80px 0 40px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .footer h4 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.2rem;
+      color: white;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    .footer-links a {
+      display: block;
+      padding: 6px 0;
+      font-size: 0.86rem;
+      color: rgba(255, 255, 255, 0.5);
+      transition: color var(--transition);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: var(--blue-400);
+    }
+
+    @media(max-width:768px) {
+      .thank-you-card { padding: 40px 24px; }
+      .success-icon { width: 64px; height: 64px; margin-bottom: 24px; }
+    }
+
+    @media(max-width:900px) {
+      .footer-grid { grid-template-columns: 1fr 1fr }
+    }
+
+    @media(max-width:640px) {
+      .footer-grid { grid-template-columns: 1fr }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html#home" class="nav-logo">
+        <div class="nav-logo-icon">GC</div>
+        <div class="nav-logo-text"><span class="nav-logo-name">Gary's Concrete</span><span class="nav-logo-tag">&
+            Construction Co.</span></div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#areas">Areas</a>
+        <a href="index.html#gallery">Gallery</a>
+        <a href="index.html#reviews">Reviews</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="upcoming.html">Upcoming Project</a>
+      </div>
+      <div class="nav-cta">
+        <a href="tel:18776153528" class="nav-btn">Free Estimate</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#home">Home</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#areas">Service Areas</a>
+    <a href="index.html#gallery">Gallery</a>
+    <a href="index.html#reviews">Reviews</a>
+    <a href="index.html#faq">FAQ</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="upcoming.html">Upcoming Project</a>
+  </div>
+
+  <section class="thank-you-section">
+    <div class="thank-you-deco"></div>
+    <div class="container">
+      <div class="thank-you-card">
+        <div class="success-icon">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </div>
+        <h1 class="heading-lg">Success!</h1>
+        <p>Thank you for submitting your project information. We'll review the details and reach out to you shortly to discuss the next steps.</p>
+        <a href="index.html" class="btn btn-primary">Back to Home</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div style="display:flex;align-items:center;gap:14px">
+            <div class="nav-logo-icon" style="background:var(--blue-600)">GC</div>
+            <div>
+              <div style="font-family:'Bebas Neue',sans-serif;font-size:1.25rem;color:white;letter-spacing:2px;line-height:1">Gary's Concrete</div>
+              <div style="font-size:0.62rem;color:var(--slate-400);letter-spacing:2px;text-transform:uppercase;font-weight:500">& Construction Co.</div>
+            </div>
+          </div>
+          <p style="margin-top:20px;">Premium concrete and construction services built on integrity, craftsmanship, and a commitment to exceeding expectations.</p>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <div class="footer-links">
+            <a href="index.html#services">Concrete Driveways</a>
+            <a href="index.html#services">Foundations</a>
+            <a href="index.html#services">Patios & Walkways</a>
+            <a href="index.html#services">Commercial Work</a>
+          </div>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <div class="footer-links">
+            <a href="index.html#about">About Us</a>
+            <a href="index.html#gallery">Gallery</a>
+            <a href="index.html#reviews">Reviews</a>
+            <a href="index.html#contact">Contact</a>
+          </div>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <div class="footer-links">
+            <a href="tel:18776153528">1-877-615-3528</a>
+            <a href="mailto:info@GarysConcrete.com">info@GarysConcrete.com</a>
+          </div>
+        </div>
+      </div>
+      <div style="padding-top:40px; text-align:center; font-size:0.82rem; color:rgba(255,255,255,0.3);">
+        &copy; 2026 Gary's Concrete & Construction Co. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('navToggle'), mobileMenu = document.getElementById('mobileMenu'); 
+    let menuOpen = false;
+    navToggle.addEventListener('click', () => { 
+      menuOpen = !menuOpen; 
+      mobileMenu.classList.toggle('active', menuOpen); 
+      const s = navToggle.querySelectorAll('span'); 
+      if (menuOpen) { 
+        s[0].style.transform = 'rotate(45deg) translate(5px,5px)'; 
+        s[1].style.opacity = '0'; 
+        s[2].style.transform = 'rotate(-45deg) translate(5px,-5px)' 
+      } else { 
+        s[0].style.transform = ''; 
+        s[1].style.opacity = ''; 
+        s[2].style.transform = '' 
+      } 
+    });
+  </script>
+</body>
+
+</html>
