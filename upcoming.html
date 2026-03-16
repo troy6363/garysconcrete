@@ -572,10 +572,17 @@
           </div>
         </div>
       </div>
-      <div style="padding-top:40px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; font-size:0.82rem; color:rgba(255,255,255,0.3);">
+      <style>
+        @keyframes linkPulse {
+          0%, 100% { transform: scale(1); opacity: 0.8; }
+          50% { transform: scale(1.05); opacity: 1; text-shadow: 0 0 10px rgba(59, 130, 246, 0.3); }
+        }
+      </style>
+      <div style="padding:32px 0; margin-top:40px; border-top:1px solid rgba(255,255,255,0.05); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; font-size:1.05rem; color:rgba(255,255,255,0.4);">
         <span>&copy; 2026 Gary's Concrete & Construction Co. All rights reserved.</span>
-        <span>Built by <a href="https://smartwebmemphis.com" target="_blank" rel="noopener" style="color:inherit; text-decoration:none; transition:color 0.3s ease;">SmartWeb Memphis</a></span>
+        <span>Built by <a href="https://smartwebmemphis.com" target="_blank" rel="noopener" style="color:var(--blue-400); text-decoration:none; font-weight:700; transition:all 0.3s ease; display:inline-block; animation:linkPulse 3s infinite ease-in-out;">SmartWeb Memphis</a></span>
       </div>
+
 
     </div>
   </footer>
