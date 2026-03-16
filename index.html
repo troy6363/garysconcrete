@@ -3416,7 +3416,46 @@
     document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
     const sections = document.querySelectorAll('section[id]'), navLinks = document.querySelectorAll('.nav-links a');
     window.addEventListener('scroll', () => { let c = ''; sections.forEach(s => { if (scrollY >= s.offsetTop - 120) c = s.getAttribute('id') }); navLinks.forEach(l => { l.classList.remove('active'); if (l.getAttribute('href') === '#' + c) l.classList.add('active') }) });
-    function handleForm(e) { e.preventDefault(); const f = e.target, b = f.querySelector('button[type="submit"]'), o = b.innerHTML; b.innerHTML = 'Sending...'; b.disabled = true; fetch('/', { method: 'POST', headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: new URLSearchParams(new FormData(f)).toString() }).then(() => { b.innerHTML = '✓ Request Sent!'; b.style.background = '#22C55E'; setTimeout(() => { b.innerHTML = o; b.style.background = ''; b.disabled = false; f.reset() }, 3000) }).catch(err => { alert('Submission failed. Please call us directly.'); b.innerHTML = o; b.disabled = false; }) }
+    async function handleForm(e) {
+      e.preventDefault();
+      const f = e.target, b = f.querySelector('button[type="submit"]'), o = b.innerHTML;
+      b.innerHTML = 'Sending...';
+      b.disabled = true;
+      const formData = new FormData(f);
+      const data = new URLSearchParams(formData).toString();
+
+      try {
+        // Send to Netlify (for form recording)
+        const netlifyPromise = fetch('/', {
+          method: 'POST',
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: data
+        });
+
+        // Send to Zapier (for automation)
+        const zapierPromise = fetch('https://hooks.zapier.com/hooks/catch21053587/up2bze9/', {
+          method: 'POST',
+          mode: 'no-cors',
+          body: formData
+        });
+
+        await Promise.all([netlifyPromise, zapierPromise]);
+
+        b.innerHTML = '✓ Request Sent!';
+        b.style.background = '#22C55E';
+        setTimeout(() => {
+          b.innerHTML = o;
+          b.style.background = '';
+          b.disabled = false;
+          f.reset();
+        }, 3000);
+      } catch (err) {
+        console.error('Form submission error:', err);
+        alert('Submission failed. Please call us directly.');
+        b.innerHTML = o;
+        b.disabled = false;
+      }
+    }
 
     // Slow down hero video playback — extra slow on mobile to reduce motion sickness
     const heroVid = document.getElementById('heroVideo');
