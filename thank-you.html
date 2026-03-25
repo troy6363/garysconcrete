@@ -179,11 +179,13 @@
 
     .nav-logo-name {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.25rem;
+      font-size: 0.85rem;
       color: white;
-      letter-spacing: 2px;
-      line-height: 1;
+      letter-spacing: 0.5px;
+      line-height: 1.1;
       display: block;
+      white-space: normal;
+      max-width: 220px;
     }
 
     .nav-logo-tag {
@@ -394,6 +396,37 @@
     @media(max-width:768px) {
       .thank-you-card { padding: 40px 24px; }
       .success-icon { width: 64px; height: 64px; margin-bottom: 24px; }
+
+      .nav-inner {
+        padding: 0 16px
+      }
+
+      .nav-logo {
+        gap: 8px;
+        max-width: calc(100% - 60px)
+      }
+
+      .nav-logo-text {
+        min-width: 0
+      }
+
+      .nav-logo-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+        flex-shrink: 0
+      }
+
+      .nav-logo-name {
+        font-size: 0.75rem;
+        letter-spacing: 0;
+        white-space: normal;
+        line-height: 1.1
+      }
+
+      .nav-logo-tag {
+        display: none
+      }
     }
 
     @media(max-width:900px) {
