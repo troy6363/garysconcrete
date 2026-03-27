@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recent Projects | Gary's Concrete and Construction Company LLC</title>
+  <meta name="description" content="View our most recent concrete projects and construction work by Gary's Concrete and Construction Company LLC.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --slate-950: #0C1222; --slate-900: #111827; --slate-800: #1E293B; --slate-700: #334155; --slate-600: #475569;
+      --slate-500: #64748B; --slate-400: #94A3B8; --slate-300: #CBD5E1; --slate-200: #E2E8F0; --slate-100: #F1F5F9; --slate-50: #F8FAFC;
+      --blue-700: #1D4ED8; --blue-600: #2563EB; --blue-500: #3B82F6; --blue-400: #60A5FA; --blue-300: #93C5FD;
+      --amber-500: #F59E0B; --green-500: #22C55E; --green-400: #4ADE80; --white: #FFFFFF;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08); --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12); --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.18);
+      --radius: 6px; --radius-lg: 12px; --radius-xl: 16px;
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: 'DM Sans', sans-serif; color: var(--slate-800); background: var(--white); line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    
+    .heading-lg { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1; letter-spacing: 1.5px; text-transform: uppercase; }
+    .subheading { font-size: 1.1rem; font-weight: 500; color: var(--slate-500); line-height: 1.7; }
+    .label { font-size: 0.75rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--blue-500); }
+    
+    .btn { display: inline-flex; align-items: center; gap: 10px; padding: 16px 32px; font-size: 0.95rem; font-weight: 700; letter-spacing: 0.5px; border-radius: var(--radius); transition: all var(--transition); }
+    .btn-primary { background: var(--blue-600); color: var(--white); }
+    .btn-primary:hover { background: var(--blue-700); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37, 99, 235, 0.35); }
+    
+    /* NAV */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(15, 23, 42, 0.92); backdrop-filter: blur(24px); border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 0 24px; max-width: 1400px; margin: 0 auto; height: 76px; }
+    .nav-logo { display: flex; align-items: center; gap: 14px; }
+    .nav-logo-icon { width: 46px; height: 46px; background: var(--blue-600); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; color: white; letter-spacing: 1px; }
+    .nav-logo-text { display: flex; flex-direction: column; }
+    .nav-logo-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.25rem; color: white; letter-spacing: 2px; line-height: 1.15; display: block; }
+    .nav-logo-tag { font-size: 0.62rem; color: var(--slate-400); letter-spacing: 2px; text-transform: uppercase; font-weight: 500; }
+    .nav-links { display: flex; gap: 6px; }
+    .nav-links a { color: rgba(255, 255, 255, 0.65); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase; padding: 8px 14px; border-radius: var(--radius); transition: all var(--transition); }
+    .nav-links a:hover { color: white; background: rgba(255, 255, 255, 0.08); }
+    
+    @media(max-width:768px) {
+      .nav-logo { gap: 8px; max-width: calc(100% - 60px); }
+      .nav-logo-icon { width: 32px; height: 32px; font-size: 1rem; }
+      .nav-logo-name { font-size: 0.75rem; letter-spacing: 0; white-space: normal; line-height: 1.1; }
+      .nav-logo-tag { display: none; }
+      .nav-links { display: none; }
+    }
+    
+    /* PAGE HEADER */
+    .page-header { background: var(--slate-950); padding: 180px 0 80px; text-align: center; position: relative; overflow: hidden; }
+    .page-header::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 50% 100%, rgba(37, 99, 235, 0.15) 0%, transparent 60%); pointer-events: none; }
+    .page-header .heading-lg { color: white; margin-bottom: 20px; }
+    .page-header .subheading { color: rgba(255, 255, 255, 0.6); max-width: 600px; margin: 0 auto; }
+    
+    /* GALLERY */
+    .recent-gallery { padding: 80px 0 120px; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 24px; margin-bottom: 40px; }
+    .gallery-item { border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 4/3; position: relative; cursor: pointer; transition: all var(--transition); box-shadow: var(--shadow-sm); border: 1px solid var(--slate-200); }
+    .gallery-item:hover { transform: translateY(-8px); box-shadow: var(--shadow-xl); border-color: var(--blue-300); }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+    .gallery-item:hover img { transform: scale(1.05); }
+    .gallery-item-overlay { position: absolute; inset: 0; background: linear-gradient(transparent 50%, rgba(15, 23, 42, 0.85)); opacity: 0; transition: opacity var(--transition); display: flex; align-items: flex-end; padding: 24px; z-index: 2; pointer-events: none; }
+    .gallery-item:hover .gallery-item-overlay { opacity: 1; }
+    .gallery-item-overlay span { color: white; font-weight: 700; font-size: 1.1rem; letter-spacing: 0.5px; transform: translateY(10px); transition: transform 0.4s ease; }
+    .gallery-item:hover .gallery-item-overlay span { transform: translateY(0); }
+    
+    .action-bar { text-align: center; margin-top: 60px; }
+    
+    /* Footer */
+    .footer { background: var(--slate-900); color: rgba(255, 255, 255, 0.6); padding: 50px 0; text-align: center; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">GC</div>
+        <div class="nav-logo-text">
+          <span class="nav-logo-name">Gary's Concrete<br><span style="font-size: 0.7em; letter-spacing: 1px; opacity: 0.9;">and Construction Company LLC</span></span>
+          <span class="nav-logo-tag">Premium Concrete & Construction Services</span>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Back to Home</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <div class="container">
+      <div class="label" style="color: var(--blue-400); margin-bottom: 16px;">Our Latest Work</div>
+      <h1 class="heading-lg">Recent Projects</h1>
+      <p class="subheading">Take a look at some of the stunning concrete projects our team has completed recently.</p>
+    </div>
+  </header>
+
+  <!-- RECENT GALLERY -->
+  <main class="recent-gallery">
+    <div class="container">
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="Assets/06eddb618c025b54561e1567371f4c868076beac-14.jpg" alt="Recent Concrete Project 1">
+          <div class="gallery-item-overlay"><span>Concrete Project</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="Assets/06eddb618c025b54561e1567371f4c868076beac-24.jpg" alt="Recent Concrete Project 2">
+          <div class="gallery-item-overlay"><span>Concrete Walkway</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="Assets/06eddb618c025b54561e1567371f4c868076beac-34.jpg" alt="Recent Concrete Project 3">
+          <div class="gallery-item-overlay"><span>Premium Concrete Work</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="Assets/06eddb618c025b54561e1567371f4c868076beac-44.jpg" alt="Recent Concrete Project 4">
+          <div class="gallery-item-overlay"><span>High-Quality Finish</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="Assets/06eddb618c025b54561e1567371f4c868076beac-64.jpg" alt="Recent Concrete Project 5">
+          <div class="gallery-item-overlay"><span>Foundation & Prep</span></div>
+        </div>
+      </div>
+      
+      <div class="action-bar">
+        <a href="index.html" class="btn btn-primary" style="background: var(--slate-800); border-radius: 50px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          Back to Homepage
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Gary's Concrete and Construction Company LLC. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
