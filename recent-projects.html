@@ -75,6 +75,25 @@
     
     /* Footer */
     .footer { background: var(--slate-900); color: rgba(255, 255, 255, 0.6); padding: 50px 0; text-align: center; }
+    
+    /* Lightbox */
+    .lightbox { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.85); backdrop-filter: blur(6px); }
+    .lightbox.active { display: flex; justify-content: center; align-items: center; }
+    .lightbox-content { max-width: 90%; max-height: 85vh; object-fit: contain; border-radius: var(--radius); box-shadow: var(--shadow-xl); animation: zoom 0.3s ease; user-select: none; }
+    @keyframes zoom { from {transform: scale(0.95); opacity: 0;} to {transform: scale(1); opacity: 1;} }
+    .close-lightbox { position: absolute; top: 30px; right: 40px; color: rgba(255, 255, 255, 0.7); font-size: 50px; font-weight: 300; cursor: pointer; transition: color 0.3s; z-index: 2001; }
+    .close-lightbox:hover { color: var(--blue-400); }
+    .lightbox-nav { position: absolute; top: 50%; transform: translateY(-50%); color: rgba(255, 255, 255, 0.7); font-size: 50px; cursor: pointer; padding: 20px; user-select: none; z-index: 2002; transition: all 0.3s; }
+    .lightbox-nav:hover { color: var(--blue-400); transform: translateY(-50%) scale(1.1); }
+    .lightbox-prev { left: 10px; }
+    .lightbox-next { right: 10px; }
+    @media(max-width:768px) {
+      .lightbox-nav { font-size: 40px; padding: 10px; }
+      .lightbox-prev { left: 0; }
+      .lightbox-next { right: 0; }
+      .close-lightbox { top: 15px; right: 20px; font-size: 40px; }
+      .lightbox-content { max-width: 100%; border-radius: 0; }
+    }
   </style>
 </head>
 <body>
@@ -107,26 +126,74 @@
   <!-- RECENT GALLERY -->
   <main class="recent-gallery">
     <div class="container">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 2px solid var(--slate-100);">
+        <h2 style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 1px; color: var(--slate-800);">Latest Work</h2>
+        <span style="background: rgba(59, 130, 246, 0.1); color: var(--blue-600); font-weight: 700; font-size: 0.85rem; padding: 6px 12px; border-radius: 50px; letter-spacing: 1px;">Project Date: 5-2-2026</span>
+      </div>
+      
       <div class="gallery-grid">
-        <div class="gallery-item">
+        <div class="gallery-item" onclick="openLightbox('Assets/upload/May_5_2026_5_24_20_1.jpg')">
+          <img src="Assets/upload/May_5_2026_5_24_20_1.jpg" alt="Recent Concrete Project - May 2, 2026">
+          <div class="gallery-item-overlay"><span>View Project</span></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox('Assets/upload/May_5_2026_5_24_20_2.jpg')">
+          <img src="Assets/upload/May_5_2026_5_24_20_2.jpg" alt="Recent Concrete Project - May 2, 2026">
+          <div class="gallery-item-overlay"><span>View Project</span></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox('Assets/upload/May_5_2026_5_24_20_3.jpg')">
+          <img src="Assets/upload/May_5_2026_5_24_20_3.jpg" alt="Recent Concrete Project - May 2, 2026">
+          <div class="gallery-item-overlay"><span>View Project</span></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox('Assets/upload/May_5_2026_5_24_20_5.jpg')">
+          <img src="Assets/upload/May_5_2026_5_24_20_5.jpg" alt="Recent Concrete Project - May 2, 2026">
+          <div class="gallery-item-overlay"><span>View Project</span></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox('Assets/upload/May_5_2026_5_24_20_6.jpg')">
+          <img src="Assets/upload/May_5_2026_5_24_20_6.jpg" alt="Recent Concrete Project - May 2, 2026">
+          <div class="gallery-item-overlay"><span>View Project</span></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox('Assets/upload/May_5_2026_5_24_20_7.jpg')">
+          <img src="Assets/upload/May_5_2026_5_24_20_7.jpg" alt="Recent Concrete Project - May 2, 2026">
+          <div class="gallery-item-overlay"><span>View Project</span></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox('Assets/upload/May_5_2026_5_24_20_8.jpg')">
+          <img src="Assets/upload/May_5_2026_5_24_20_8.jpg" alt="Recent Concrete Project - May 2, 2026">
+          <div class="gallery-item-overlay"><span>View Project</span></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox('Assets/upload/May_5_2026_5_24_20_9.jpg')">
+          <img src="Assets/upload/May_5_2026_5_24_20_9.jpg" alt="Recent Concrete Project - May 2, 2026">
+          <div class="gallery-item-overlay"><span>View Project</span></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox('Assets/upload/May_5_2026_5_24_20_10.jpg')">
+          <img src="Assets/upload/May_5_2026_5_24_20_10.jpg" alt="Recent Concrete Project - May 2, 2026">
+          <div class="gallery-item-overlay"><span>View Project</span></div>
+        </div>
+      </div>
+
+      <div style="display: flex; align-items: center; justify-content: space-between; margin: 40px 0 24px; padding-bottom: 12px; border-bottom: 2px solid var(--slate-100);">
+        <h2 style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 1px; color: var(--slate-800);">Previous Projects</h2>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item" onclick="openLightbox('Assets/06eddb618c025b54561e1567371f4c868076beac-14.jpg')">
           <img src="Assets/06eddb618c025b54561e1567371f4c868076beac-14.jpg" alt="Recent Concrete Project 1">
-          <div class="gallery-item-overlay"><span>Concrete Project</span></div>
+          <div class="gallery-item-overlay"><span>View Project</span></div>
         </div>
-        <div class="gallery-item">
+        <div class="gallery-item" onclick="openLightbox('Assets/06eddb618c025b54561e1567371f4c868076beac-24.jpg')">
           <img src="Assets/06eddb618c025b54561e1567371f4c868076beac-24.jpg" alt="Recent Concrete Project 2">
-          <div class="gallery-item-overlay"><span>Concrete Walkway</span></div>
+          <div class="gallery-item-overlay"><span>View Project</span></div>
         </div>
-        <div class="gallery-item">
+        <div class="gallery-item" onclick="openLightbox('Assets/06eddb618c025b54561e1567371f4c868076beac-34.jpg')">
           <img src="Assets/06eddb618c025b54561e1567371f4c868076beac-34.jpg" alt="Recent Concrete Project 3">
-          <div class="gallery-item-overlay"><span>Premium Concrete Work</span></div>
+          <div class="gallery-item-overlay"><span>View Project</span></div>
         </div>
-        <div class="gallery-item">
+        <div class="gallery-item" onclick="openLightbox('Assets/06eddb618c025b54561e1567371f4c868076beac-44.jpg')">
           <img src="Assets/06eddb618c025b54561e1567371f4c868076beac-44.jpg" alt="Recent Concrete Project 4">
-          <div class="gallery-item-overlay"><span>High-Quality Finish</span></div>
+          <div class="gallery-item-overlay"><span>View Project</span></div>
         </div>
-        <div class="gallery-item">
+        <div class="gallery-item" onclick="openLightbox('Assets/06eddb618c025b54561e1567371f4c868076beac-64.jpg')">
           <img src="Assets/06eddb618c025b54561e1567371f4c868076beac-64.jpg" alt="Recent Concrete Project 5">
-          <div class="gallery-item-overlay"><span>Foundation & Prep</span></div>
+          <div class="gallery-item-overlay"><span>View Project</span></div>
         </div>
       </div>
       
@@ -148,6 +215,83 @@
       <p>&copy; 2026 Gary's Concrete and Construction Company LLC. All Rights Reserved.</p>
     </div>
   </footer>
+
+  <!-- LIGHTBOX MODAL -->
+  <div id="imageLightbox" class="lightbox" onclick="if(event.target === this) closeLightbox()">
+    <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+    <div class="lightbox-nav lightbox-prev" onclick="changeImage(-1, event)">&#10094;</div>
+    <img class="lightbox-content" id="lightboxImg" onclick="event.stopPropagation()">
+    <div class="lightbox-nav lightbox-next" onclick="changeImage(1, event)">&#10095;</div>
+  </div>
+
+  <script>
+    let currentImageIndex = 0;
+    let images = [];
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const galleryItems = document.querySelectorAll('.gallery-item');
+      images = Array.from(galleryItems).map(item => item.querySelector('img').src);
+      
+      galleryItems.forEach((item, index) => {
+        // Remove old onclick attribute to avoid conflicts, bind new event
+        item.removeAttribute('onclick');
+        item.addEventListener('click', () => openLightboxIndex(index));
+      });
+    });
+
+    function openLightboxIndex(index) {
+      currentImageIndex = index;
+      document.getElementById('imageLightbox').classList.add('active');
+      document.getElementById('lightboxImg').src = images[currentImageIndex];
+      document.body.style.overflow = 'hidden'; // Prevent scrolling underneath
+    }
+
+    function closeLightbox() {
+      document.getElementById('imageLightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function changeImage(direction, event) {
+      if(event) event.stopPropagation();
+      currentImageIndex += direction;
+      
+      // Loop around
+      if (currentImageIndex >= images.length) {
+        currentImageIndex = 0;
+      } else if (currentImageIndex < 0) {
+        currentImageIndex = images.length - 1;
+      }
+      
+      document.getElementById('lightboxImg').src = images[currentImageIndex];
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+      if (!document.getElementById('imageLightbox').classList.contains('active')) return;
+      if (e.key === 'ArrowRight') changeImage(1);
+      if (e.key === 'ArrowLeft') changeImage(-1);
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    // Touch swipe support for mobile
+    let touchstartX = 0;
+    let touchendX = 0;
+    
+    document.getElementById('imageLightbox').addEventListener('touchstart', e => {
+      touchstartX = e.changedTouches[0].screenX;
+    }, {passive: true});
+
+    document.getElementById('imageLightbox').addEventListener('touchend', e => {
+      touchendX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, {passive: true});
+
+    function handleSwipe() {
+      const threshold = 50; // Minimum swipe distance
+      if (touchstartX - touchendX > threshold) changeImage(1); // Swipe left -> Next image
+      if (touchendX - touchstartX > threshold) changeImage(-1); // Swipe right -> Previous image
+    }
+  </script>
 
 </body>
 </html>
