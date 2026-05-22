@@ -15,6 +15,61 @@
     Cache-Control = "public, max-age=31536000, immutable"
 
 [[redirects]]
+  from = "http://garysconcrete.com/*"
+  to = "https://www.garyconcrete.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://garysconcrete.com/*"
+  to = "https://www.garyconcrete.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.garysconcrete.com/*"
+  to = "https://www.garyconcrete.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.garysconcrete.com/*"
+  to = "https://www.garyconcrete.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://garyconcrete.com/*"
+  to = "https://www.garyconcrete.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://garyconcrete.com/*"
+  to = "https://www.garyconcrete.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/index.html"
   to = "/"
   status = 301
+  force = true
+
+[[redirects]]
+  from = "/upcoming.html"
+  to = "/upcoming"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/recent-projects.html"
+  to = "/recent-projects"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/thank-you.html"
+  to = "/thank-you"
+  status = 301
+  force = true
