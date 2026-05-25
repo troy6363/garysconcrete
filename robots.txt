@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.garyconcrete.com/sitemap.xml
+Sitemap: https://www.garysconcrete.com/sitemap.xml

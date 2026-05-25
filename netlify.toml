@@ -16,37 +16,19 @@
 
 [[redirects]]
   from = "http://garysconcrete.com/*"
-  to = "https://www.garyconcrete.com/:splat"
+  to = "https://www.garysconcrete.com/:splat"
   status = 301
   force = true
 
 [[redirects]]
   from = "https://garysconcrete.com/*"
-  to = "https://www.garyconcrete.com/:splat"
+  to = "https://www.garysconcrete.com/:splat"
   status = 301
   force = true
 
 [[redirects]]
   from = "http://www.garysconcrete.com/*"
-  to = "https://www.garyconcrete.com/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "https://www.garysconcrete.com/*"
-  to = "https://www.garyconcrete.com/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "http://garyconcrete.com/*"
-  to = "https://www.garyconcrete.com/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "https://garyconcrete.com/*"
-  to = "https://www.garyconcrete.com/:splat"
+  to = "https://www.garysconcrete.com/:splat"
   status = 301
   force = true
 
